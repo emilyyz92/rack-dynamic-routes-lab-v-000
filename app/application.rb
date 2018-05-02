@@ -1,6 +1,6 @@
 class Application
 
-  @@items = []
+  @@items = [Item.new("Apples",5.23), Item.new("Oranges",2.43)]
 
   def call(env)
     resp = Rack::Response.new
@@ -19,5 +19,6 @@ class Application
       resp.write "Route not found"
       resp.status = 404
     end
+    resp.finish
   end
 end
