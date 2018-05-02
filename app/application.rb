@@ -13,7 +13,7 @@ class Application
         resp.write "Item not found"
         resp.status = 400
       else
-        resp.write "#{chosen_item.name}\n price: #{chosen_item.price}"
+        resp.write "#{chosen_item.first.name}\n price: #{chosen_item.price}"
       end
     else
       resp.write "Route not found"
