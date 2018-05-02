@@ -10,7 +10,7 @@ class Application
     if req.path.include?("items")
       name = req.path.split("items/").last
       binding.pry
-      chosen_item = @@items.select{|item|@name == name}
+      chosen_item = @@items.select{|item|item.name == name}
       if chosen_item == []
         resp.write "Item not found"
         resp.status = 400
